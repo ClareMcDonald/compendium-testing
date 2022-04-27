@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import '../../App.css';
 
 export default function PokeList() {
     const [pokemon, setPokemon] = useState([]);
@@ -51,19 +52,24 @@ export default function PokeList() {
             {search
                 ? searchedPokemon.map((poke, i) => {
                     return (
-                    <div>
-                        <h2>{poke.name}</h2>
-                        <p>{poke.type}</p>
-                        <img src={poke.img} alt='pic of pokemon' />
+                    <div class='all-pokemon'>
+                        <div class='pokemon'>
+                            <h2>{poke.name}</h2>
+                            <p>{poke.type}</p>
+                            <img src={poke.img} alt='pic of pokemon' />
+                        </div>
                     </div>
                     )
                 })
                : pokemon.map((poke, i) => {
-                return (
-                <div>
-                    <h2>{poke.name}</h2>
-                    <p>{poke.type}</p>
+                   return (
+                <div class='all-pokemon'>
+                    <div class='pokemon'>
+                        <h2>{poke.name}</h2>
+                        <p>{poke.type}</p>
                     <img src={poke.img} alt='pic of pokemon' />
+                    </div>
+                           
                 </div>
                 )
             })
