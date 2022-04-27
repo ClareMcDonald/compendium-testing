@@ -2,7 +2,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import PokeList from './PokeList';
 
 describe('PokeList', () => {
-    it.skip('should render the Pokemon', async () => {
+    it('should render the Pokemon', async () => {
         render(<PokeList />)
 
         return waitFor(() => {
