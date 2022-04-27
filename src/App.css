@@ -1,0 +1,28 @@
+html, body, #root, App {
+    height: 100%;
+}
+
+/* body {
+    background-color: rgb(91, 91, 167);
+} */
+
+.all-pokemon {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.pokemon {
+    background-color: rgb(91, 91, 167);
+    border: solid 20px rgb(8, 8, 152);
+    width: 500px;
+    padding: 30px;
+    margin: 30px;
+    justify-items: center;
+    text-align: center;
+}
+
+.form {
+    background-color: rgb(159, 128, 181);
+    margin: 30px;
+    padding: 30px;
+}
