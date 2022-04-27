@@ -63,7 +63,7 @@ export default function PokeList() {
                 })
                : pokemon.map((poke, i) => {
                    return (
-                <div className={styles['all-pokemon']}>
+                <div className={styles['all-pokemon']} aria-label={'all-pokemon'}>
                     <div className={styles['pokemon']}>
                         <h2>{poke.name}</h2>
                         <p>{poke.type}</p>
