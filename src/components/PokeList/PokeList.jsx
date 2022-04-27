@@ -27,25 +27,29 @@ export default function PokeList() {
                 name: poke.pokemon,
                 type: poke.type_1
             }));
-
+            
             setPokemon(pokemon);
             console.log(pokemon);
+            setLoading(false);
         }
         getPokemon();
-        setLoading(false);
     }, []);
 
-    if (loading) return (
+    return loading
+        
+    ? (
         <>
             <div>Loading</div>
         </>
-    );
+    )
 
-    return (
+   : (
         <>
             <form onSubmit={handleSubmit} className={styles['form']}>
                 <label>Name
-                    <input type='text' value={search} onChange={e => setSearch(e.target.value)}></input>  
+                    <label>!
+                    <input type='text' placeholder='find by name' value={search} onChange={e => setSearch(e.target.value)}></input>  
+                    </label>
                     <button>Search</button>
                 </label>
             </form>
@@ -63,7 +67,7 @@ export default function PokeList() {
                 })
                : pokemon.map((poke, i) => {
                    return (
-                <div className={styles['all-pokemon']} aria-label={'all-pokemon'}>
+                <div className={styles['all-pokemon']} aria-label='all-pokemon'>
                     <div className={styles['pokemon']}>
                         <h2>{poke.name}</h2>
                         <p>{poke.type}</p>
