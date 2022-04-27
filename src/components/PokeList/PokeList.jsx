@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import '../../App.css';
+import styles from '../../App.css';
 
 export default function PokeList() {
     const [pokemon, setPokemon] = useState([]);
@@ -43,7 +43,7 @@ export default function PokeList() {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className={styles['form']}>
                 <label>Name
                     <input type='text' value={search} onChange={e => setSearch(e.target.value)}></input>  
                     <button>Search</button>
@@ -52,8 +52,8 @@ export default function PokeList() {
             {search
                 ? searchedPokemon.map((poke, i) => {
                     return (
-                    <div class='all-pokemon'>
-                        <div class='pokemon'>
+                    <div className={styles['all-pokemon']}>
+                        <div className={styles['pokemon']}>
                             <h2>{poke.name}</h2>
                             <p>{poke.type}</p>
                             <img src={poke.img} alt='pic of pokemon' />
@@ -63,8 +63,8 @@ export default function PokeList() {
                 })
                : pokemon.map((poke, i) => {
                    return (
-                <div class='all-pokemon'>
-                    <div class='pokemon'>
+                <div className={styles['all-pokemon']}>
+                    <div className={styles['pokemon']}>
                         <h2>{poke.name}</h2>
                         <p>{poke.type}</p>
                     <img src={poke.img} alt='pic of pokemon' />
